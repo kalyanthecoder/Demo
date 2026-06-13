@@ -21,9 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
             : '0 2px 8px rgba(0,0,0,0.08)';
     });
 
-    // Animate skill progress bars when scrolled into view
+    // Animate skill progress bars when they scroll into view
     const progressBars = document.querySelectorAll('.progress');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                bar.style.width = bar.style.width; // trigger reflow
+                observer.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.3 });
 
+    progressBars.forEach(bar => {
+        const target = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => observer.observe(bar), 100);
+        bar.dataset.target = target;
+    });
+
+    // Re-trigger width after observed
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -33,11 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.3 });
 
-    progressBars.forEach(bar => {
-        bar.dataset.target = bar.style.width;
-        bar.style.width = '0';
-        skillObserver.observe(bar);
-    });
+    progressBars.forEach(bar => skillObserver.observe(bar));
 
     // Fade-in sections on scroll
     const sections = document.querySelectorAll('.section, .bg-light');
