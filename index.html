@@ -3,9 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="greeting">Hello, I'm</p>
+            <h1 class="name">Your Name</h1>
+            <p class="role">Web Developer &amp; Designer</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-img">
+                <div class="img-placeholder">Photo</div>
+            </div>
+            <div class="about-text">
+                <p>Hi! I'm a passionate developer who loves building clean, functional web experiences. I enjoy turning ideas into reality through code.</p>
+                <p>When I'm not coding, you'll find me exploring new technologies and working on personal projects.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section bg-light" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-icon">🌐</span>
+                <h3>HTML & CSS</h3>
+                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                <h3>JavaScript</h3>
+                <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚛️</span>
+                <h3>React</h3>
+                <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🗄️</span>
+                <h3>Node.js</h3>
+                <div class="progress-bar"><div class="progress" style="width: 65%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img">Project 1</div>
+                <div class="project-info">
+                    <h3>Project One</h3>
+                    <p>A web app built with HTML, CSS, and JavaScript.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-sm">Live</a>
+                        <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project 2</div>
+                <div class="project-info">
+                    <h3>Project Two</h3>
+                    <p>A responsive site using modern CSS techniques.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-sm">Live</a>
+                        <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">Project 3</div>
+                <div class="project-info">
+                    <h3>Project Three</h3>
+                    <p>Full-stack application with Node and React.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-sm">Live</a>
+                        <a href="#" class="btn btn-sm btn-outline">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section bg-light" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p class="form-msg" id="formMsg"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
