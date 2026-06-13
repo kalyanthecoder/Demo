@@ -272,6 +272,23 @@ body {
     margin-bottom: 1rem;
 }
 
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.tag {
+    background: #6c63ff18;
+    color: #6c63ff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid #6c63ff33;
+}
+
 .project-links {
     display: flex;
     gap: 0.7rem;
